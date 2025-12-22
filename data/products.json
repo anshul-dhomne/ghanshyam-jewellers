@@ -8,9 +8,9 @@
         "metal": "gold",
         "category": "ladies-ring",
         "purity": "22K",
-        "net_weight": 4.20,
-        "gross_weight": 4.55,
-        "making_charge": 1200,
+        "net_weight": 2.50,
+        "gross_weight": 6.00,
+        "making_percent": 13,
         "image": "/images/Product.png"
       },
       {
@@ -22,7 +22,7 @@
         "purity": "22K",
         "net_weight": 4.20,
         "gross_weight": 4.45,
-        "making_charge": 1800,
+        "making_percent": 13,
         "image": "/images/Product.png"
       },
       {
@@ -34,7 +34,7 @@
         "purity": "22K",
         "net_weight": 4.20,
         "gross_weight": 4.45,
-        "making_charge": 1500,
+        "making_percent": 10,
         "image": "/images/Product.png"
       },
       {
@@ -46,7 +46,7 @@
         "purity": "22K",
         "net_weight": 4.20,
         "gross_weight": 4.45,
-        "making_charge": 1100,
+        "making_percent": 10,
         "image": "/images/Product.png"
       },
       {
@@ -59,7 +59,7 @@
         "purity": "22K",
         "net_weight": 4.20,
         "gross_weight": 4.45,
-        "making_charge": 2200,
+        "making_percent": 10,
         "image": "/images/Product.png"
       },
       {
@@ -69,9 +69,9 @@
         "metal": "gold",
         "category": "ladies-necklace",
         "purity": "22K",
-        "net_weight": 4.20,
+        "net_weight": 10.20,
         "gross_weight": 4.45,
-        "making_charge": 4500,
+        "making_percent": 10,
         "image": "/images/Product.png"
       },
       {
@@ -83,7 +83,7 @@
         "purity": "22K",
         "net_weight": 4.20,
         "gross_weight": 4.45,
-        "making_charge": 3800,
+        "making_percent": 10,
         "image": "/images/Product.png"
       },
       {
@@ -95,7 +95,7 @@
         "purity": "22K",
         "net_weight": 4.20,
         "gross_weight": 4.45,
-        "making_charge": 1900,
+        "making_percent": 10,
         "image": "/images/Product.png"
       },
       {
@@ -107,7 +107,7 @@
         "purity": "22K",
         "net_weight": 4.20,
         "gross_weight": 4.45,
-        "making_charge": 1900,
+        "making_percent": 10,
         "image": "/images/Product.png"
       },
       {
@@ -119,7 +119,7 @@
         "purity": "22K",
         "net_weight": 4.20,
         "gross_weight": 4.45,
-        "making_charge": 1900,
+        "making_percent": 10,
         "image": "/images/Product.png"
       }
     ],
@@ -133,7 +133,7 @@
         "purity": "22K",
         "net_weight": 4.20,
         "gross_weight": 4.45,
-        "making_charge": 1300,
+        "making_percent": 10,
         "image": "/images/Product.png"
       },
       {
@@ -145,7 +145,7 @@
         "purity": "22K",
         "net_weight": 4.20,
         "gross_weight": 4.45,
-        "making_charge": 2000,
+        "making_percent": 10,
         "image": "/images/Product.png"
       },
       {
@@ -157,7 +157,7 @@
         "purity": "22K",
         "net_weight": 4.20,
         "gross_weight": 4.45,
-        "making_charge": 2100,
+        "making_percent": 10,
         "image": "/images/Product.png"
       },
       {
@@ -169,7 +169,7 @@
         "purity": "22K",
         "net_weight": 4.20,
         "gross_weight": 4.45,
-        "making_charge": 2100,
+        "making_percent": 10,
         "image": "/images/Product.png"
       }
     ]
