@@ -1,0 +1,426 @@
+{
+  "gold": {
+    "ladies": [
+      {
+        "id": 10101,
+        "product_code": "GDJ-G-LR-0001",
+        "name": "Gold Ladies Ring ",
+        "metal": "gold",
+        "category": "ladies-ring",
+        "purity": "22K",
+        "net_weight": 4.20,
+        "gross_weight": 4.55,
+        "making_charge": 1200,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 10102,
+        "product_code": "GDJ-G-LC-0001",
+        "name": " Gold Ladies Chain ",
+        "metal": "gold",
+        "category": "ladies-chain",
+        "purity": "22K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 1800,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 10103,
+        "product_code": "GDJ-G-LER-0001",
+        "name": " Gold Earrings ",
+        "metal": "gold",
+        "category": "ladies-earring",
+        "purity": "22K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 1500,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 10104,
+        "product_code": "GDJ-G-LPD-0001",
+        "name": " Gold Pendant ",
+        "metal": "gold",
+        "category": "ladies-pendant",
+        "purity": "22K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 1100,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 10105,
+        "product_code": "GDJ-G-LMS-0001",
+        "name": " Gold Mangalsutra ",
+        "product_desc": "ABC",
+        "metal": "gold",
+        "category": "ladies-mangalsutra",
+        "purity": "22K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 2200,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 10106,
+        "product_code": "GDJ-G-LNL-0001",
+        "name": " Gold Necklace ",
+        "metal": "gold",
+        "category": "ladies-necklace",
+        "purity": "22K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 4500,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 10107,
+        "product_code": "GDJ-G-LBG-0001",
+        "name": " Gold Bangles ",
+        "metal": "gold",
+        "category": "ladies-bangles",
+        "purity": "22K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 3800,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 10108,
+        "product_code": "GDJ-G-LBR-0001",
+        "name": " Gold Bracelet ",
+        "metal": "gold",
+        "category": "ladies-bracelet",
+        "purity": "22K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 1900,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 10109,
+        "product_code": "GDJ-G-LK-0001",
+        "name": " Gold Kada ",
+        "metal": "gold",
+        "category": "ladies-kada",
+        "purity": "22K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 1900,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 101010,
+        "product_code": "GDJ-G-LN-0001",
+        "name": " Gold Nath ",
+        "metal": "gold",
+        "category": "ladies-nath",
+        "purity": "22K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 1900,
+        "image": "/images/Product.png"
+      }
+    ],
+    "gents": [
+      {
+        "id": 10201,
+        "product_code": "GDJ-G-GR-0001",
+        "name": " Gold Gents Ring ",
+        "metal": "gold",
+        "category": "gents-ring",
+        "purity": "22K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 1300,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 10202,
+        "product_code": "GDJ-G-GC-0001",
+        "name": " Gold Gents Chain ",
+        "metal": "gold",
+        "category": "gents-chain",
+        "purity": "22K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 2000,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 10203,
+        "product_code": "GDJ-G-GBR-0001",
+        "name": " Gold Gents Bracelet ",
+        "metal": "gold",
+        "category": "gents-bracelet",
+        "purity": "22K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 2100,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 10204,
+        "product_code": "GDJ-G-GK-0001",
+        "name": " Gold Gents Kada ",
+        "metal": "gold",
+        "category": "gents-kada",
+        "purity": "22K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 2100,
+        "image": "/images/Product.png"
+      }
+    ]
+  },
+  "silver": {
+    "ladies": [
+      {
+        "id": 20101,
+        "product_code": "GDJ-S-LP-0001",
+        "name": "925 Silver Payal",
+        "metal": "silver",
+        "category": "ladies-payal",
+        "purity": "925",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 300,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 20102,
+        "product_code": "GDJ-S-LT-0001",
+        "name": "925 Silver Toering",
+        "metal": "silver",
+        "category": "ladies-toering",
+        "purity": "925",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 450,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 20103,
+        "product_code": "GDJ-S-LR-0001",
+        "name": "925 Silver Ladies Ring",
+        "metal": "silver",
+        "category": "ladies-ring",
+        "purity": "925",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 450,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 20110,
+        "product_code": "GDJ-S-LC-0001",
+        "name": "925 Silver Ladies Chain",
+        "metal": "silver",
+        "category": "ladies-chain",
+        "purity": "925",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 420,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 20105,
+        "product_code": "GDJ-S-LBR-0001",
+        "name": "925 Silver Ladies Bracelet",
+        "metal": "silver",
+        "category": "ladies-bracelet",
+        "purity": "925",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 450,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 20104,
+        "product_code": "GDJ-S-LK-0001",
+        "name": "925 Silver Ladies Kada",
+        "metal": "silver",
+        "category": "ladies-kada",
+        "purity": "925",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 450,
+        "image": "/images/Product.png"
+      }
+    ],
+    "gents": [
+      {
+        "id": 20106,
+        "product_code": "GDJ-S-GC-0001",
+        "name": "925 Silver Gents Chain",
+        "metal": "silver",
+        "category": "gents-chain",
+        "purity": "925",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 450,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 20107,
+        "product_code": "GDJ-S-GR-0001",
+        "name": "925 Silver Gents Ring",
+        "metal": "silver",
+        "category": "gents-ring",
+        "purity": "925",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 450,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 20109,
+        "product_code": "GDJ-S-GB-0001",
+        "name": "925 Silver Gents Bracelet",
+        "metal": "silver",
+        "category": "gents-bracelet",
+        "purity": "925",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 450,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 20108,
+        "product_code": "GDJ-S-GK-0001",
+        "name": "925 Silver Gents Kada",
+        "metal": "silver",
+        "category": "gents-kada",
+        "purity": "925",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "making_charge": 450,
+        "image": "/images/Product.png"
+      }
+    ]
+  },
+  "diamond": {
+    "ladies": [
+      {
+        "id": 30101,
+        "product_code": "GDJ-D-LR-0001",
+        "name": "Diamond Ladies Ring ",
+        "metal": "diamond",
+        "category": "ladies-ring",
+        "purity": "18K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "diamond_weight": 0.35,
+        "making_charge": 3200,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 30102,
+        "product_code": "GDJ-D-LER-0001",
+        "name": "Diamond Ladies Earrings ",
+        "metal": "diamond",
+        "category": "ladies-earring",
+        "purity": "18K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "diamond_weight": 0.42,
+        "making_charge": 3000,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 30103,
+        "product_code": "GDJ-D-LPD-0001",
+        "name": "Diamond Ladies Pendant ",
+        "metal": "diamond",
+        "category": "ladies-pendant",
+        "purity": "18K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "diamond_weight": 0.28,
+        "making_charge": 2800,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 30104,
+        "product_code": "GDJ-D-LMS-0001",
+        "name": "Diamond Mangalsutra ",
+        "metal": "diamond",
+        "category": "ladies-mangalsutra",
+        "purity": "18K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "diamond_weight": 0.55,
+        "making_charge": 4500,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 30105,
+        "product_code": "GDJ-D-LBR-0001",
+        "name": "Diamond Ladies Bracelet ",
+        "metal": "diamond",
+        "category": "ladies-bracelet",
+        "purity": "18K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "diamond_weight": 0.60,
+        "making_charge": 5200,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 30106,
+        "product_code": "GDJ-D-LNP-0001",
+        "name": "Diamond Nose Pin ",
+        "metal": "diamond",
+        "category": "ladies-nose-pin",
+        "purity": "18K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "diamond_weight": 0.12,
+        "making_charge": 1800,
+        "image": "/images/Product.png"
+      }
+    ],
+    "gents": [
+      {
+        "id": 30201,
+        "product_code": "GDJ-D-GR-0001",
+        "name": "Diamond Gents Ring ",
+        "metal": "diamond",
+        "category": "gents-ring",
+        "purity": "18K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "diamond_weight": 0.45,
+        "making_charge": 4200,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 30202,
+        "product_code": "GDJ-D-GC-0001",
+        "name": "Diamond Gents Chain ",
+        "metal": "diamond",
+        "category": "gents-chain",
+        "purity": "18K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "diamond_weight": 0.22,
+        "making_charge": 2600,
+        "image": "/images/Product.png"
+      },
+      {
+        "id": 30203,
+        "product_code": "GDJ-D-GB-0001",
+        "name": "Diamond Gents Bracelet ",
+        "metal": "diamond",
+        "category": "gents-bracelet",
+        "purity": "18K",
+        "net_weight": 4.20,
+        "gross_weight": 4.45,
+        "diamond_weight": 0.70,
+        "making_charge": 6500,
+        "image": "/images/Product.png"
+      }
+    ]
+  }
+}

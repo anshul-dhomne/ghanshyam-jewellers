@@ -1,0 +1,199 @@
+  :root {
+            --gold: #c9a24d;
+            --beige: #f5f1ea;
+            --dark: #222;
+            --grey: #666;
+            --white: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif
+        }
+
+        body {
+            background: #fff;
+            color: var(--dark)
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+            z-index: 1000
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .brand img {
+            height: 45px
+        }
+
+        .brand span {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 600
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500
+        }
+
+        nav ul li a:hover {
+            color: var(--gold)
+        }
+
+        .nav-icons i {
+            margin-left: 15px;
+            cursor: pointer
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px
+        }
+
+        .gallery img {
+            width: 100%;
+            border: 1px solid #eee
+        }
+
+        .thumbs {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px
+        }
+
+        .thumbs img {
+            width: 70px;
+            border: 1px solid #ddd;
+            cursor: pointer
+        }
+
+        .details h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 10px
+        }
+
+        .rating {
+            color: var(--gold);
+            margin-bottom: 10px
+        }
+
+        .price {
+            font-size: 24px;
+            color: var(--gold);
+            font-weight: 600;
+            margin: 15px 0
+        }
+
+        .price-breakup {
+            background: var(--beige);
+            padding: 15px;
+            margin-bottom: 15px;
+            font-size: 14px
+        }
+
+        .price-breakup p {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px
+        }
+
+        .options {
+            margin-bottom: 15px
+        }
+
+        .options label {
+            font-weight: 500
+        }
+
+        .options select {
+            padding: 6px 10px;
+            margin-left: 10px
+        }
+
+        .badges {
+            margin: 15px 0
+        }
+
+        .badge {
+            display: inline-block;
+            background: #111;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 12px;
+            margin-right: 5px
+        }
+
+        .actions button {
+            padding: 12px 22px;
+            margin-right: 10px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer
+        }
+
+        .add {
+            background: var(--gold);
+            color: #fff
+        }
+
+        .buy {
+            background: #111;
+            color: #fff
+        }
+
+        .whatsapp {
+            background: #25D366;
+            color: #fff
+        }
+
+        .tabs {
+            margin-top: 40px
+        }
+
+        .tabs h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px
+        }
+
+        .tabs p {
+            font-size: 14px;
+            color: var(--grey)
+        }
+
+        @media(max-width:900px) {
+            .container {
+                grid-template-columns: 1fr
+            }
+        }

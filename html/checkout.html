@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Ghanshyam Dumbhare Jewellers</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="/style/checkout.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="navbar">
+      <div class="brand">
+        <img src="/images/logo.PNG">
+        <span>Ghanshyam Dumbhare Jewellers</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="checkout-container">
+
+    <!-- LEFT -->
+    <div class="form-section">
+
+      <h3>Contact</h3>
+      <input type="text" id="contact" placeholder="Email or mobile phone number">
+      <label class="check"><input type="checkbox" checked> Email me with news and offers</label>
+
+      <h3>Delivery</h3>
+
+      <select>
+        <option>India</option>
+      </select>
+
+      <div class="two">
+        <input type="text" id="fname" placeholder="First name">
+        <input type="text" id="lname" placeholder="Last name">
+      </div>
+
+      <input type="text" id="address" placeholder="Address">
+      <input type="text" placeholder="Apartment, suite, etc. (optional)">
+
+      <div class="two">
+        <input type="text" placeholder="City">
+        <input type="text" placeholder="PIN code">
+      </div>
+
+      <input type="tel" id="phone" placeholder="Phone">
+
+      <h3>Payment</h3>
+
+      <label class="payment active">
+        <input type="radio" name="pay" checked>
+        Razorpay Secure (UPI, Cards, NetBanking, Wallets)
+      </label>
+
+      <label class="payment">
+        <input type="radio" name="pay">
+        Cash on Delivery (COD)
+      </label>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="summary">
+
+      <div id="orderItems"></div>
+
+      <div class="discount">
+        <input type="text" placeholder="Discount code">
+        <button>Apply</button>
+      </div>
+
+      <p><span>Subtotal</span><span id="subtotal">₹ 0</span></p>
+      <p><span>Shipping</span><span>Enter address</span></p>
+      <p class="total"><span>Total</span><span id="total">₹ 0</span></p>
+      <small>Including GST</small>
+
+      <button class="pay-now" id="placeOrder">Pay now</button>
+
+    </div>
+
+  </div>
+
+  <script src="/js/checkout.js"></script>
+</body>
+
+</html>
