@@ -151,7 +151,7 @@ function renderProducts(products) {
     name.textContent = p.name;
 
     const price = document.createElement("span");
-    price.textContent = `₹ ${calculatePrice(p).toLocaleString("en-IN")}`;
+    price.textContent = `Rs. ${calculatePrice(p).toLocaleString("en-IN")}`;
 
     product.append(img, name, price);
     productList.appendChild(product);

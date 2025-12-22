@@ -100,3 +100,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
+// ================= AUTO PRICE ON HOMEPAGE =================
+fetch("/data/products.json")
+  .then(res => res.json())
+  .then(data => {
+
+    let allProducts = [];
+
+    Object.keys(data).forEach(metal => {
+      Object.keys(data[metal]).forEach(gender => {
+        allProducts = allProducts.concat(data[metal][gender]);
+      });
+    });
+
+    document.querySelectorAll(".auto-price").forEach(el => {
+      const id = parseInt(el.dataset.productId);
+      const product = allProducts.find(p => p.id === id);
+
+      if (product) {
+        el.textContent = `₹ ${calculatePrice(product).toLocaleString("en-IN")}`;
+      }
+    });
+
+  });
