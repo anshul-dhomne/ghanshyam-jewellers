@@ -5,12 +5,14 @@
         "id": 10101,
         "product_code": "GDJ-G-LR-0001",
         "name": "Gold Ladies Ring ",
+        "product_desc": "A beautiful gold ladies ring perfect for any occasion.",
         "metal": "gold",
         "category": "ladies-ring",
         "purity": "22K",
         "net_weight": 2.50,
-        "gross_weight": 6.00,
+        "gross_weight": 3.00,
         "making_percent": 13,
+        "size": [6,7,8],
         "image": "/images/Product.png"
       },
       {
@@ -84,6 +86,7 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_percent": 10,
+        "size": [6,7,8],
         "image": "/images/Product.png"
       },
       {
@@ -108,6 +111,7 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_percent": 10,
+        "size": [6,7,8],
         "image": "/images/Product.png"
       },
       {
@@ -134,6 +138,7 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_percent": 10,
+        "size": [6,7,8],
         "image": "/images/Product.png"
       },
       {
@@ -170,6 +175,7 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_percent": 10,
+        "size": [6,7,8],
         "image": "/images/Product.png"
       }
     ]
@@ -210,6 +216,7 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_charge": 450,
+        "size": [6,7,8],
         "image": "/images/Product.png"
       },
       {
@@ -246,6 +253,7 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_charge": 450,
+        "size": [6,7,8],
         "image": "/images/Product.png"
       }
     ],
@@ -272,6 +280,7 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_charge": 450,
+        "size": [6,7,8],
         "image": "/images/Product.png"
       },
       {
@@ -296,6 +305,7 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_charge": 450,
+        "size": [6,7,8],
         "image": "/images/Product.png"
       }
     ]
@@ -313,6 +323,7 @@
         "gross_weight": 4.45,
         "diamond_weight": 0.35,
         "making_charge": 3200,
+        "size": [6,7,8],
         "image": "/images/Product.png"
       },
       {
@@ -393,6 +404,7 @@
         "gross_weight": 4.45,
         "diamond_weight": 0.45,
         "making_charge": 4200,
+        "size": [6,7,8],
         "image": "/images/Product.png"
       },
       {

@@ -187,17 +187,15 @@
 
  /* ===== SECTION ===== */
  section {
-   padding: 60px 20px;
+   padding: 40px 20px;
    max-width: 100%;
    margin: auto;
-   /* margin-top: 40px;
-   margin-bottom: 10px; */
  }
 
  /* ===== PROMISES ===== */
 
  .promises-section {
-   padding: 80px 0;
+   padding: 40px 0;
    text-align: center;
    background: #ffffff;
  }
@@ -338,7 +336,7 @@
  }
 
 
- /* ===== BESTSELLERS COLLECTION ===== */
+ /* ===== BESTS COLLECTION ===== */
  .bestseller-title {
    text-align: center;
    font-family: 'Playfair Display', serif;
@@ -361,8 +359,8 @@
  }
 
  .bestseller-item img {
-   width: 180px;
-   height: 180px;
+   width: 200px;
+   height: 200px;
    border-radius: 50%;
    object-fit: cover;
    margin-bottom: 15px;
@@ -384,9 +382,9 @@
  /* ===== CATEGORY ===== */
  .category-section {
    background-color: #f5f1ea;
-   /* beige */
-   padding: 80px 40px;
-   /* space top & bottom */
+   padding: 40px auto;
+   max-width: 100%;
+   margin: auto;
  }
 
  .category-tittle {
@@ -414,8 +412,8 @@
  }
 
  .category img {
-   width: 330px;
-   height: 330px;
+   width: 300px;
+   height: 300px;
    object-fit: cover;
    border-radius: 16px;
    margin-bottom: 15px;
