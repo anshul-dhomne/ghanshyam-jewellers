@@ -129,7 +129,7 @@ fetch("/data/products.json")
   })
   .catch(err => console.error("Category JSON error:", err));
 
-// ================= RENDER =================
+// ================= RENDER PRODUCTS =================
 function renderProducts(products) {
   productList.innerHTML = "";
 
@@ -142,18 +142,14 @@ function renderProducts(products) {
     const product = document.createElement("div");
     product.className = "product";
 
-    const img = document.createElement("img");
-    img.src = Array.isArray(p.image) ? p.image[0] : p.image;
-    img.alt = p.name;
-    img.onclick = () => openProduct(p.id);
+    product.innerHTML = `
+      <a href="/html/product-details.html?id=${p.id}" style="text-decoration:none;color:inherit">
+        <img src="${Array.isArray(p.image) ? p.image[0] : p.image}" alt="${p.name}">
+        <h4>${p.name}</h4>
+        <span>₹ ${calculatePrice(p).toLocaleString("en-IN")}</span>
+      </a>
+    `;
 
-    const name = document.createElement("h4");
-    name.textContent = p.name;
-
-    const price = document.createElement("span");
-    price.textContent = `Rs. ${calculatePrice(p).toLocaleString("en-IN")}`;
-
-    product.append(img, name, price);
     productList.appendChild(product);
   });
 }
@@ -162,19 +158,19 @@ function renderProducts(products) {
 function applyFiltersAndSort() {
   let filtered = [...allLoadedProducts];
 
-  // Gender
+  // Gender filter
   const genders = [...document.querySelectorAll(".filter-gender:checked")].map(i => i.value);
   if (genders.length) {
     filtered = filtered.filter(p => genders.some(g => p.category.startsWith(g)));
   }
 
-  // Purity
+  // Purity filter
   const purities = [...document.querySelectorAll(".filter-purity:checked")].map(i => i.value);
   if (purities.length) {
     filtered = filtered.filter(p => purities.includes(p.purity));
   }
 
-  // Price
+  // Price filter
   const priceRanges = [...document.querySelectorAll(".filter-price:checked")].map(i => i.value);
   if (priceRanges.length) {
     filtered = filtered.filter(p => {
@@ -187,7 +183,7 @@ function applyFiltersAndSort() {
     });
   }
 
-  // Sort
+  // Sorting
   if (sortSelect.value === "Price: Low to High") {
     filtered.sort((a, b) => calculatePrice(a) - calculatePrice(b));
   }
@@ -199,12 +195,8 @@ function applyFiltersAndSort() {
 }
 
 // ================= EVENTS =================
-document.querySelectorAll(".filter-gender, .filter-purity, .filter-price")
+document
+  .querySelectorAll(".filter-gender, .filter-purity, .filter-price")
   .forEach(el => el.addEventListener("change", applyFiltersAndSort));
 
 sortSelect.addEventListener("change", applyFiltersAndSort);
-
-// ================= NAVIGATION =================
-function openProduct(id) {
-  window.location.href = `/html/product-details.html?id=${id}`;
-}

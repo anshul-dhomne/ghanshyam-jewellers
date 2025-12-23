@@ -25,7 +25,6 @@ function calculatePrice(product) {
 
         const goldRate = getMetalRate("gold");
         const diamondRate = getMetalRate("diamond");
-
         const makingPercent = product.making_percent || 0;
 
         // Gold value

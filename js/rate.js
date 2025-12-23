@@ -1,6 +1,7 @@
 // ================= METAL RATES =================
+// Single source of truth for rates
 
-const METAL_RATES = {
+const METAL_RATES = JSON.parse(localStorage.getItem("metalRates")) || {
     gold: 12300,     // per gram
     silver: 75,      // per gram
     diamond: 45000   // per carat
