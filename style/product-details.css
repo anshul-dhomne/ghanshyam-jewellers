@@ -18,7 +18,7 @@ body {
     color: var(--dark);
 }
 
-/* ================= PRODUCT PAGE ================= */
+/* ================= MAIN SECTION ================= */
 .product-page {
     max-width: 1200px;
     margin: 40px auto;
@@ -28,12 +28,14 @@ body {
     gap: 50px;
 }
 
+/* PRODUCT IMAGE */
 .product-image img {
     width: 100%;
     border-radius: 10px;
     border: 1px solid #eee;
 }
 
+/* PRODUCT INFO */
 .product-info h1 {
     font-family: 'Playfair Display', serif;
     font-size: 30px;
@@ -52,11 +54,12 @@ body {
     margin-bottom: 10px;
 }
 
-/* ================= OPTIONS ================= */
+/* ================= PRODUCT WEIGHT ================= */
 .product-options {
     margin: 15px 0;
 }
 
+/* PURITY AND PINCODE */
 .option-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -76,9 +79,7 @@ body {
     color: #555;
 }
 
-/* ===== UNIFORM INPUT SIZE (IMPORTANT) ===== */
-
-/* SELECT (Metal Purity & Size) */
+/* SELECT (Metal Purity & Size) BOX */
 .select-box {
     width: 100%;
     height: 46px;

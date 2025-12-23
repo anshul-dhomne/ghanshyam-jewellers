@@ -314,7 +314,6 @@
    width: 49%;
    height: 1px;
    background-color: #c9a24d;
-   /* gold */
  }
 
  .section-divider::before {
@@ -325,7 +324,7 @@
    right: 0;
  }
 
- /* Center Icon */
+ /* HR CENTER ICON */
  .divider-icon {
    display: inline-block;
    width: 22px;
@@ -336,7 +335,7 @@
  }
 
 
- /* ===== BESTS COLLECTION ===== */
+ /* ===== BEST COLLECTION ===== */
  .bestseller-title {
    text-align: center;
    font-family: 'Playfair Display', serif;
@@ -379,7 +378,7 @@
  }
 
 
- /* ===== CATEGORY ===== */
+ /* ===== CATEGORY / BEST SELLER / NEW ARRIVAL ===== */
  .category-section {
    background-color: #f5f1ea;
    padding: 40px auto;
@@ -403,11 +402,8 @@
  }
 
  .category {
-   /* background: #ffffff; */
    border-radius: 22px;
-   /* padding: 20px; */
    text-align: center;
-   /* box-shadow: 0 12px 35px rgba(0,0,0,0.08); */
    transition: all 0.3s ease;
  }
 
