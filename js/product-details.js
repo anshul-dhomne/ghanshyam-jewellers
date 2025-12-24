@@ -1,10 +1,10 @@
-// ================= PRODUCT DETAILS PAGE SCRIPT =================
+// ========== PRODUCT DETAILS PAGE SCRIPT ==========
 
-// ================= URL PARAM =================
+// ========== URL PARAM ==========
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
 
-// ================= DOM ELEMENTS =================
+// ========== DOM ELEMENTS ==========
 const productImage = document.getElementById("productImage");
 const productImageWrapper = document.querySelector(".product-image");
 const thumbnailList = document.getElementById("thumbnailList");
@@ -25,7 +25,7 @@ const puritySelect = document.getElementById("puritySelect");
 const productInfo = document.getElementById("productInfo");
 const whatsappLink = document.getElementById("whatsappLink");
 
-// ================= LOAD PRODUCTS =================
+// ========== LOAD PRODUCTS ==========
 fetch("/data/products.json")
   .then(res => res.json())
   .then(data => {
@@ -45,9 +45,7 @@ fetch("/data/products.json")
       return;
     }
 
-    // =====================================================
-    // 1️⃣ IMAGE LOGIC (SMART SIZE HANDLING)
-    // =====================================================
+    // ========== IMAGE LOGIC (SMART SIZE HANDLING) ==========
     const images = Array.isArray(product.image)
       ? product.image
       : [product.image];
@@ -85,9 +83,7 @@ fetch("/data/products.json")
       });
     }
 
-    // =====================================================
-    // 2️⃣ BASIC DETAILS
-    // =====================================================
+    // ========== BASIC DETAILS ==========
     productTitle.innerText = product.name;
 
     netWeightEl.innerText = product.net_weight.toFixed(2);
@@ -98,21 +94,15 @@ fetch("/data/products.json")
       <span>${product.product_desc || ""}</span>
     `;
 
-    // =====================================================
-    // 3️⃣ PURITY
-    // =====================================================
+    // ========== PURITY ==========
     puritySelect.innerHTML = `<option>${product.purity}</option>`;
 
-    // =====================================================
-    // 4️⃣ PRICE
-    // =====================================================
+    // ========== PRICE BREAKUP ==========
     const total = calculatePrice(product);
     productPrice.innerText = `₹ ${total.toLocaleString("en-IN")}`;
     totalPriceEl.innerText = `₹ ${total.toLocaleString("en-IN")}`;
 
-    // =====================================================
-    // 5️⃣ PINCODE CHECK
-    // =====================================================
+    // ========== PINCODE CHECK ==========
     const pincodeInput = document.querySelector(".pincode-wrapper input");
     const pincodeButton = document.querySelector(".pincode-wrapper button");
     const pincodeMessage = document.getElementById("pincodeMessage");
@@ -137,9 +127,7 @@ fetch("/data/products.json")
       }
     });
 
-    // =====================================================
-    // 6️⃣ SIZE LOGIC
-    // =====================================================
+    // ========== SIZE LOGIC ==========
     const sizeRow = document.getElementById("sizeRow");
     const sizeSelect = document.getElementById("sizeSelect");
 
@@ -157,9 +145,7 @@ fetch("/data/products.json")
       sizeRow.style.display = "none";
     }
 
-    // =====================================================
-    // 7️⃣ PRICE BREAKUP
-    // =====================================================
+    // ========== PRICE BREAKUP ==========
     let metalPrice = 0;
     let diamondPrice = 0;
     let makingCharge = 0;
@@ -185,9 +171,54 @@ fetch("/data/products.json")
     makingChargeEl.innerText = `₹ ${Math.round(makingCharge).toLocaleString("en-IN")}`;
     gstPriceEl.innerText = `₹ ${Math.round(gst).toLocaleString("en-IN")}`;
 
-    // =====================================================
-    // 8️⃣ WHATSAPP
-    // =====================================================
+    // ================= ADD TO CART (FIXED) =================
+
+    // Get cart
+    function getCart() {
+      return JSON.parse(localStorage.getItem("cart")) || [];
+    }
+
+    // Save cart
+    function saveCart(cart) {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    // Add to cart logic
+    function addToCart() {
+      let cart = getCart();
+
+      const finalPrice = Math.round(
+        metalPrice + diamondPrice + makingCharge + gst
+      );
+
+      const cartItem = {
+        id: product.id,
+        name: product.name,
+        metal: product.metal,
+        price: finalPrice,
+        image: Array.isArray(product.image) ? product.image[0] : product.image,
+        qty: 1
+      };
+
+      const existing = cart.find(item => item.id === product.id);
+
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push(cartItem);
+      }
+
+      saveCart(cart);
+      alert("Product added to cart 🛒");
+    }
+
+    // Button click
+    document
+      .getElementById("addToCartBtn")
+      .addEventListener("click", addToCart);
+
+
+    // ========== WHATSAPP ==========
     whatsappLink.href =
       `https://wa.me/91XXXXXXXXXX?text=Hello, I am interested in ${product.name} (Code: ${product.product_code})`;
 
