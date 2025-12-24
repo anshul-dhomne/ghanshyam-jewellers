@@ -1,10 +1,10 @@
 // ================= PRODUCT DETAILS PAGE SCRIPT =================
 
-// URL PARAM
+// ================= URL PARAM =================
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
 
-// DOM ELEMENTS
+// ================= DOM ELEMENTS =================
 const productImage = document.getElementById("productImage");
 const productTitle = document.getElementById("productTitle");
 const productPrice = document.getElementById("productPrice");
@@ -22,19 +22,22 @@ const puritySelect = document.getElementById("puritySelect");
 const productInfo = document.getElementById("productInfo");
 const whatsappLink = document.getElementById("whatsappLink");
 
+// IMAGE GALLERY
+const thumbnailList = document.getElementById("thumbnailList");
+
 // ================= LOAD PRODUCTS =================
 fetch("/data/products.json")
   .then(res => res.json())
   .then(data => {
 
+    // -------- FLATTEN JSON --------
     let allProducts = [];
-
     Object.values(data).forEach(metal =>
       Object.values(metal).forEach(group =>
-        allProducts.push(...group)
-      )
+        allProducts.push(...group))
     );
 
+    // -------- FIND PRODUCT --------
     const product = allProducts.find(p => p.id == productId);
 
     if (!product) {
@@ -42,59 +45,97 @@ fetch("/data/products.json")
       return;
     }
 
-    // ================= BASIC DETAILS =================
-    productImage.src = Array.isArray(product.image) ? product.image[0] : product.image;
+    // =====================================================
+    // 1️⃣ IMAGE GALLERY (CONDITIONAL THUMBNAILS)
+    // =====================================================
+    const images = Array.isArray(product.image)
+      ? product.image
+      : [product.image];
+
+    // Set main image
+    productImage.src = images[0];
+
+    // If only one image → hide thumbnails
+    if (images.length <= 1) {
+      thumbnailList.style.display = "none";
+    } else {
+      thumbnailList.style.display = "flex";
+      thumbnailList.innerHTML = "";
+
+      images.forEach((src, index) => {
+        const thumb = document.createElement("img");
+        thumb.src = src;
+
+        if (index === 0) thumb.classList.add("active");
+
+        thumb.addEventListener("click", () => {
+          document
+            .querySelectorAll(".product-thumbnails img")
+            .forEach(i => i.classList.remove("active"));
+
+          thumb.classList.add("active");
+          productImage.src = src;
+        });
+
+        thumbnailList.appendChild(thumb);
+      });
+    }
+
+    // =====================================================
+    // 2️⃣ BASIC DETAILS
+    // =====================================================
     productTitle.innerText = product.name;
 
     netWeightEl.innerText = product.net_weight.toFixed(2);
     grossWeightEl.innerText = product.gross_weight.toFixed(2);
 
     productInfo.innerHTML = `
-  <strong>Product Code:</strong> ${product.product_code}<br>
-  <span>${product.product_desc || ""}</span>
-`;
+      <strong>Product Code:</strong> ${product.product_code}<br>
+      <span>${product.product_desc || ""}</span>
+    `;
 
-
-
-    // ================= PURITY =================
+    // =====================================================
+    // 3️⃣ PURITY
+    // =====================================================
     puritySelect.innerHTML = `<option>${product.purity}</option>`;
 
-    // ================= PRICE =================
+    // =====================================================
+    // 4️⃣ PRICE
+    // =====================================================
     const total = calculatePrice(product);
     productPrice.innerText = `₹ ${total.toLocaleString("en-IN")}`;
     totalPriceEl.innerText = `₹ ${total.toLocaleString("en-IN")}`;
 
-    // ================= PINCODE CHECK (INLINE MESSAGE) =================
+    // =====================================================
+    // 5️⃣ PINCODE CHECK
+    // =====================================================
     const pincodeInput = document.querySelector(".pincode-wrapper input");
     const pincodeButton = document.querySelector(".pincode-wrapper button");
     const pincodeMessage = document.getElementById("pincodeMessage");
 
-    const serviceablePincodes = [
-      "441912",
-      "440001",
-      "441104",
-      "441904"
-    ];
+    const serviceablePincodes = ["441912", "440001", "441104", "441904"];
 
     pincodeButton.addEventListener("click", () => {
       const pin = pincodeInput.value.trim();
 
       if (!/^\d{6}$/.test(pin)) {
         pincodeMessage.textContent = "Please enter a valid 6-digit pincode";
-        pincodeMessage.style.color = "#c0392b"; // red
+        pincodeMessage.style.color = "#c0392b";
         return;
       }
 
       if (serviceablePincodes.includes(pin)) {
         pincodeMessage.textContent = "✔ Delivery available to this location";
-        pincodeMessage.style.color = "#27ae60"; // green
+        pincodeMessage.style.color = "#27ae60";
       } else {
         pincodeMessage.textContent = "✖ Delivery not available to this location";
-        pincodeMessage.style.color = "#c0392b"; // red
+        pincodeMessage.style.color = "#c0392b";
       }
     });
 
-    // ================= SIZE LOGIC =================
+    // =====================================================
+    // 6️⃣ SIZE LOGIC
+    // =====================================================
     const sizeRow = document.getElementById("sizeRow");
     const sizeSelect = document.getElementById("sizeSelect");
 
@@ -112,7 +153,9 @@ fetch("/data/products.json")
       sizeRow.style.display = "none";
     }
 
-    // ================= PRICE BREAKUP =================
+    // =====================================================
+    // 7️⃣ PRICE BREAKUP
+    // =====================================================
     let metalPrice = 0;
     let diamondPrice = 0;
     let makingCharge = 0;
@@ -138,7 +181,9 @@ fetch("/data/products.json")
     makingChargeEl.innerText = `₹ ${Math.round(makingCharge).toLocaleString("en-IN")}`;
     gstPriceEl.innerText = `₹ ${Math.round(gst).toLocaleString("en-IN")}`;
 
-    // ================= WHATSAPP =================
+    // =====================================================
+    // 8️⃣ WHATSAPP
+    // =====================================================
     whatsappLink.href =
       `https://wa.me/91XXXXXXXXXX?text=Hello, I am interested in ${product.name} (Code: ${product.product_code})`;
 

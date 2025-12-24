@@ -13,7 +13,12 @@
         "gross_weight": 3.00,
         "making_percent": 13,
         "size": [6,7,8],
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/Product.png",
+             "/images/Product.png",
+              "/images/Product.png"
+        ]
       },
       {
         "id": 10102,
