@@ -6,6 +6,9 @@ const productId = params.get("id");
 
 // ================= DOM ELEMENTS =================
 const productImage = document.getElementById("productImage");
+const productImageWrapper = document.querySelector(".product-image");
+const thumbnailList = document.getElementById("thumbnailList");
+
 const productTitle = document.getElementById("productTitle");
 const productPrice = document.getElementById("productPrice");
 
@@ -21,9 +24,6 @@ const totalPriceEl = document.getElementById("totalPrice");
 const puritySelect = document.getElementById("puritySelect");
 const productInfo = document.getElementById("productInfo");
 const whatsappLink = document.getElementById("whatsappLink");
-
-// IMAGE GALLERY
-const thumbnailList = document.getElementById("thumbnailList");
 
 // ================= LOAD PRODUCTS =================
 fetch("/data/products.json")
@@ -46,7 +46,7 @@ fetch("/data/products.json")
     }
 
     // =====================================================
-    // 1️⃣ IMAGE GALLERY (CONDITIONAL THUMBNAILS)
+    // 1️⃣ IMAGE LOGIC (SMART SIZE HANDLING)
     // =====================================================
     const images = Array.isArray(product.image)
       ? product.image
@@ -55,11 +55,15 @@ fetch("/data/products.json")
     // Set main image
     productImage.src = images[0];
 
-    // If only one image → hide thumbnails
-    if (images.length <= 1) {
+    // ONLY ONE IMAGE → hide thumbnails & expand image
+    if (images.length === 1) {
       thumbnailList.style.display = "none";
-    } else {
+      productImageWrapper.classList.add("full-width");
+    }
+    // MULTIPLE IMAGES → show thumbnails & normal image size
+    else {
       thumbnailList.style.display = "flex";
+      productImageWrapper.classList.remove("full-width");
       thumbnailList.innerHTML = "";
 
       images.forEach((src, index) => {

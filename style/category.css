@@ -43,7 +43,7 @@ body {
 .container {
     max-width: 100%;
     margin: auto;
-    padding: 40px 20px;
+    padding: 40px 40px;
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: 30px;
@@ -51,8 +51,10 @@ body {
 
 /* ===== FILTERS ===== */
 .filters {
-    border: 1px solid #eee;
     padding: 20px;
+    height: 500px;
+    background-color: #f5f1ea;
+    border-radius: 10px;
 }
 
 .filters h3 {
@@ -101,6 +103,7 @@ body {
     padding: 15px;
     text-align: center;
     transition: 0.3s;
+   
 }
 
 .product:hover {
