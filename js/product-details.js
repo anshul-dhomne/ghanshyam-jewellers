@@ -1,10 +1,10 @@
-// ========== PRODUCT DETAILS PAGE SCRIPT ==========
+// ================= PRODUCT DETAILS PAGE SCRIPT =================
 
-// ========== URL PARAM ==========
+// ---------- URL PARAM ----------
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
 
-// ========== DOM ELEMENTS ==========
+// ---------- DOM ----------
 const productImage = document.getElementById("productImage");
 const productImageWrapper = document.querySelector(".product-image");
 const thumbnailList = document.getElementById("thumbnailList");
@@ -21,120 +21,74 @@ const makingChargeEl = document.getElementById("makingCharge");
 const gstPriceEl = document.getElementById("gstPrice");
 const totalPriceEl = document.getElementById("totalPrice");
 
-const puritySelect = document.getElementById("puritySelect");
-const productInfo = document.getElementById("productInfo");
+const purityValue = document.getElementById("purityValue");
 const whatsappLink = document.getElementById("whatsappLink");
 
-// ========== LOAD PRODUCTS ==========
+// ---------- CART HELPERS ----------
+function getCart() {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+function saveCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// ---------- LOAD PRODUCTS ----------
 fetch("/data/products.json")
   .then(res => res.json())
   .then(data => {
 
-    // -------- FLATTEN JSON --------
+    // ---- FLATTEN JSON ----
     let allProducts = [];
     Object.values(data).forEach(metal =>
       Object.values(metal).forEach(group =>
         allProducts.push(...group))
     );
 
-    // -------- FIND PRODUCT --------
     const product = allProducts.find(p => p.id == productId);
-
     if (!product) {
       productTitle.innerText = "Product Not Found";
       return;
     }
 
-    // ========== IMAGE LOGIC (SMART SIZE HANDLING) ==========
-    const images = Array.isArray(product.image)
-      ? product.image
-      : [product.image];
-
-    // Set main image
+    // ---------- IMAGES ----------
+    const images = Array.isArray(product.image) ? product.image : [product.image];
     productImage.src = images[0];
 
-    // ONLY ONE IMAGE → hide thumbnails & expand image
-    if (images.length === 1) {
+    if (images.length > 1) {
+      thumbnailList.innerHTML = "";
+      images.forEach((src, i) => {
+        const img = document.createElement("img");
+        img.src = src;
+        if (i === 0) img.classList.add("active");
+        img.onclick = () => {
+          document.querySelectorAll("#thumbnailList img")
+            .forEach(x => x.classList.remove("active"));
+          img.classList.add("active");
+          productImage.src = src;
+        };
+        thumbnailList.appendChild(img);
+      });
+    } else {
       thumbnailList.style.display = "none";
       productImageWrapper.classList.add("full-width");
     }
-    // MULTIPLE IMAGES → show thumbnails & normal image size
-    else {
-      thumbnailList.style.display = "flex";
-      productImageWrapper.classList.remove("full-width");
-      thumbnailList.innerHTML = "";
 
-      images.forEach((src, index) => {
-        const thumb = document.createElement("img");
-        thumb.src = src;
-
-        if (index === 0) thumb.classList.add("active");
-
-        thumb.addEventListener("click", () => {
-          document
-            .querySelectorAll(".product-thumbnails img")
-            .forEach(i => i.classList.remove("active"));
-
-          thumb.classList.add("active");
-          productImage.src = src;
-        });
-
-        thumbnailList.appendChild(thumb);
-      });
-    }
-
-    // ========== BASIC DETAILS ==========
+    // ---------- BASIC DETAILS ----------
     productTitle.innerText = product.name;
-
     netWeightEl.innerText = product.net_weight.toFixed(2);
     grossWeightEl.innerText = product.gross_weight.toFixed(2);
 
-    productInfo.innerHTML = `
-      <strong>Product Code:</strong> ${product.product_code}<br>
-      <span>${product.product_desc || ""}</span>
-    `;
+    // ---------- PURITY (TEXT ONLY) ----------
+    purityValue.innerText = product.purity;
 
-    // ========== PURITY ==========
-    puritySelect.innerHTML = `<option>${product.purity}</option>`;
-
-    // ========== PRICE BREAKUP ==========
-    const total = calculatePrice(product);
-    productPrice.innerText = `₹ ${total.toLocaleString("en-IN")}`;
-    totalPriceEl.innerText = `₹ ${total.toLocaleString("en-IN")}`;
-
-    // ========== PINCODE CHECK ==========
-    const pincodeInput = document.querySelector(".pincode-wrapper input");
-    const pincodeButton = document.querySelector(".pincode-wrapper button");
-    const pincodeMessage = document.getElementById("pincodeMessage");
-
-    const serviceablePincodes = ["441912", "440001", "441104", "441904"];
-
-    pincodeButton.addEventListener("click", () => {
-      const pin = pincodeInput.value.trim();
-
-      if (!/^\d{6}$/.test(pin)) {
-        pincodeMessage.textContent = "Please enter a valid 6-digit pincode";
-        pincodeMessage.style.color = "#c0392b";
-        return;
-      }
-
-      if (serviceablePincodes.includes(pin)) {
-        pincodeMessage.textContent = "✔ Delivery available to this location";
-        pincodeMessage.style.color = "#27ae60";
-      } else {
-        pincodeMessage.textContent = "✖ Delivery not available to this location";
-        pincodeMessage.style.color = "#c0392b";
-      }
-    });
-
-    // ========== SIZE LOGIC ==========
+    // ---------- SIZE ----------
     const sizeRow = document.getElementById("sizeRow");
     const sizeSelect = document.getElementById("sizeSelect");
 
     if (product.size && Array.isArray(product.size) && product.size.length) {
-      sizeRow.style.display = "grid";
-      sizeSelect.innerHTML = "";
-
+      sizeRow.style.display = "block";
+      sizeSelect.innerHTML = `<option value="">Select Size</option>`;
       product.size.forEach(s => {
         const opt = document.createElement("option");
         opt.value = s;
@@ -145,82 +99,64 @@ fetch("/data/products.json")
       sizeRow.style.display = "none";
     }
 
-    // ========== PRICE BREAKUP ==========
-    let metalPrice = 0;
-    let diamondPrice = 0;
-    let makingCharge = 0;
+    // ---------- PRICE CALC ----------
+    let metalPrice = 0, diamondPrice = 0, makingCharge = 0;
 
     if (product.metal === "gold" || product.metal === "silver") {
-      const rate = getMetalRate(product.metal);
-      metalPrice = rate * product.net_weight;
+      metalPrice = getMetalRate(product.metal) * product.net_weight;
       makingCharge = metalPrice * ((product.making_percent || 0) / 100);
     }
 
     if (product.metal === "diamond") {
-      const goldRate = getMetalRate("gold");
-      const diamondRate = getMetalRate("diamond");
-      metalPrice = goldRate * product.net_weight;
-      diamondPrice = (product.diamond_weight || 0) * diamondRate;
+      metalPrice = getMetalRate("gold") * product.net_weight;
+      diamondPrice = (product.diamond_weight || 0) * getMetalRate("diamond");
       makingCharge = metalPrice * ((product.making_percent || 0) / 100);
     }
 
     const gst = (metalPrice + diamondPrice + makingCharge) * 0.03;
+    const finalPrice = Math.round(metalPrice + diamondPrice + makingCharge + gst);
 
     metalPriceEl.innerText = `₹ ${Math.round(metalPrice).toLocaleString("en-IN")}`;
     diamondPriceEl.innerText = `₹ ${Math.round(diamondPrice).toLocaleString("en-IN")}`;
     makingChargeEl.innerText = `₹ ${Math.round(makingCharge).toLocaleString("en-IN")}`;
     gstPriceEl.innerText = `₹ ${Math.round(gst).toLocaleString("en-IN")}`;
+    productPrice.innerText = `₹ ${finalPrice.toLocaleString("en-IN")}`;
+    totalPriceEl.innerText = `₹ ${finalPrice.toLocaleString("en-IN")}`;
 
-    // ================= ADD TO CART (FIXED) =================
+    // ---------- ADD TO CART (FIXED) ----------
+    document.getElementById("addToCartBtn").onclick = () => {
 
-    // Get cart
-    function getCart() {
-      return JSON.parse(localStorage.getItem("cart")) || [];
-    }
+      let selectedSize = null;
+      if (sizeRow.style.display !== "none" && sizeSelect.value) {
+        selectedSize = sizeSelect.value;
+      }
 
-    // Save cart
-    function saveCart(cart) {
-      localStorage.setItem("cart", JSON.stringify(cart));
-    }
+      const cart = getCart();
 
-    // Add to cart logic
-    function addToCart() {
-      let cart = getCart();
-
-      const finalPrice = Math.round(
-        metalPrice + diamondPrice + makingCharge + gst
+      const existing = cart.find(
+        i => i.id === product.id && i.size === selectedSize
       );
-
-      const cartItem = {
-        id: product.id,
-        name: product.name,
-        metal: product.metal,
-        price: finalPrice,
-        image: Array.isArray(product.image) ? product.image[0] : product.image,
-        qty: 1
-      };
-
-      const existing = cart.find(item => item.id === product.id);
 
       if (existing) {
         existing.qty += 1;
       } else {
-        cart.push(cartItem);
+        cart.push({
+          id: product.id,
+          name: product.name,
+          image: images[0],
+          purity: product.purity,
+          size: selectedSize,
+          price: finalPrice,
+          qty: 1
+        });
       }
 
       saveCart(cart);
       alert("Product added to cart 🛒");
-    }
+    };
 
-    // Button click
-    document
-      .getElementById("addToCartBtn")
-      .addEventListener("click", addToCart);
-
-
-    // ========== WHATSAPP ==========
+    // ---------- WHATSAPP ----------
     whatsappLink.href =
-      `https://wa.me/91XXXXXXXXXX?text=Hello, I am interested in ${product.name} (Code: ${product.product_code})`;
-
+      `https://wa.me/91XXXXXXXXXX?text=I am interested in ${product.name}`;
   })
-  .catch(err => console.error("Product details error:", err));
+  .catch(err => console.error(err));

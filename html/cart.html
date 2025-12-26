@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shopping Cart | Ghanshyam Dumbhare Jewellers</title>
+  <title>Ghanshyam Jewellers | Category</title>
 
   <!-- SEO -->
   <meta name="description"
@@ -20,41 +20,126 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="/style/index.css" />
-  <link rel="stylesheet" href="/style/cart.css" />
+  <link rel="stylesheet" href="/style/cart.css">
+
 </head>
 
 <body>
 
-  <!-- ================= HEADER ================= -->
+  <!-- ========== HEADER START ========== -->
   <header>
     <div class="navbar">
 
+      <!-- BRAND LOGO -->
       <div class="brand">
-        <a href="/html/index.html" style="text-decoration:none;color:inherit">
+        <a href="/index.html" style="text-decoration:none;color:inherit">
           <img src="/images/main logo/logo.PNG" alt="Ghanshyam Dumbhare Jewellers">
         </a>
       </div>
 
+      <!-- NAVIGATION -->
       <nav>
         <ul>
-          <li><a href="/html/index.html">Home</a></li>
+          <li><a href="/index.html">Home</a></li>
 
+          <!-- GOLD DROPDOWN -->
           <li class="dropdown">
             <a href="/html/category.html?metal=gold">Gold Jewellery</a>
-          </li>
+            <!-- TWO COLUMN DROPDOWN -->
+            <ul class="dropdown-menu two-column">
 
+              <!-- WOMEN -->
+              <li class="dropdown-column">
+                <span class="dropdown-title">Women</span>
+                <a href="/html/category.html?cat=ladies-ring">Ring</a>
+                <a href="/html/category.html?cat=ladies-chain">Chain</a>
+                <a href="/html/category.html?cat=ladies-earring">Earring</a>
+                <a href="/html/category.html?cat=ladies-pendant">Pendant</a>
+                <a href="/html/category.html?cat=ladies-mangalsutra">Mangalsutra</a>
+                <a href="/html/category.html?cat=ladies-necklace">Necklace</a>
+                <a href="/html/category.html?cat=ladies-bangles">Bangles</a>
+                <a href="/html/category.html?cat=ladies-bracelet"> Bracelet</a>
+                <a href="/html/category.html?cat=ladies-kada"> Kada</a>
+                <a href="/html/category.html?cat=ladies-nath">Nath</a>
+
+                <!-- MEN -->
+              <li class="dropdown-column">
+                <span class="dropdown-title">Men</span>
+                <a href="/html/category.html?metal=gold&cat=gents-ring">Ring</a>
+                <a href="/html/category.html?metal=gold&cat=gents-chain">Chain</a>
+                <a href="/html/category.html?metal=gold&cat=gents-bracelet">Bracelet</a>
+                <a href="/html/category.html?metal=gold&cat=gents-kada">Kada</a>
+              </li>
+
+            </ul>
+          </li>
+          <!-- SILVER DROPDOWN -->
           <li class="dropdown">
             <a href="/html/category.html?metal=silver">Silver Jewellery</a>
-          </li>
 
+            <!-- TWO COLUMN DROPDOWN -->
+            <ul class="dropdown-menu two-column">
+
+              <!-- WOMEN -->
+              <li class="dropdown-column">
+                <span class="dropdown-title">Women</span>
+                <a href="/html/category.html?metal=silver&cat=ladies-payal">Payal</a>
+                <a href="/html/category.html?metal=silver&cat=ladies-toering">Toering</a>
+                <a href="/html/category.html?metal=silver&cat=ladies-ring">Ring</a>
+                <a href="/html/category.html?metal=silver&cat=ladies-chain">Chain</a>
+                <a href="/html/category.html?metal=silver&cat=ladies-bracelet">Bracelet</a>
+                <a href="/html/category.html?metal=silver&cat=ladies-kada">Kada</a>
+
+              </li>
+
+
+              <!-- MEN -->
+              <li class="dropdown-column">
+                <span class="dropdown-title">Men</span>
+                <a href="/html/category.html?metal=silver&cat=gents-ring">Ring</a>
+                <a href="/html/category.html?metal=silver&cat=gents-chain">Chain</a>
+                <a href="/html/category.html?metal=silver&cat=gents-bracelet">Bracelet</a>
+                <a href="/html/category.html?metal=silver&cat=gents-kada">Kada</a>
+
+              </li>
+
+
+            </ul>
+          </li>
+          <!-- DIAMOND DROPDOWN -->
           <li class="dropdown">
             <a href="/html/category.html?metal=diamond">Diamond Jewellery</a>
-          </li>
 
+            <!-- TWO COLUMN DROPDOWN -->
+            <ul class="dropdown-menu two-column">
+
+              <!-- WOMEN -->
+              <li class="dropdown-column">
+                <span class="dropdown-title">Women</span>
+                <a href="/html/category.html?metal=diamond&cat=ladies-ring">Ring</a>
+                <a href="/html/category.html?metal=diamond&cat=ladies-earring">Earring</a>
+                <a href="/html/category.html?metal=diamond&cat=ladies-pendant">Pendant</a>
+                <a href="/html/category.html?metal=diamond&cat=ladies-mangalsutra">Mangalsutra</a>
+                <a href="/html/category.html?metal=diamond&cat=ladies-bracelet">Bracelet</a>
+                <a href="/html/category.html?metal=diamond&cat=ladies-nose-pin">Nose-pin</a>
+              </li>
+
+              <!-- MEN -->
+              <li class="dropdown-column">
+                <span class="dropdown-title">Men</span>
+                <a href="/html/category.html?metal=diamond&cat=gents-ring"> Ring</a>
+                <a href="/html/category.html?metal=diamond&cat=gents-chain"> Chain</a>
+                <a href="/html/category.html?metal=diamond&cat=gents-bracelet"> Bracelet</a>
+              </li>
+
+            </ul>
+          </li>
           <li><a href="/html/contact.html">Contact</a></li>
         </ul>
       </nav>
 
+
+      <!-- ICONS -->
       <div class="nav-icons">
         <i class="fa fa-search"></i>
         <i class="fa fa-heart"></i>
@@ -65,58 +150,74 @@
 
     </div>
   </header>
+  <!-- ========== HEADER END ========== -->
 
-  <!-- ================= PAGE TITLE ================= -->
+  <!-- PAGE TITLE -->
   <div class="page-title">
     <h1>Shopping Cart</h1>
   </div>
 
-  <!-- ================= CART ================= -->
-  <div class="cart-container">
+  <section class="cart-container">
 
     <!-- CART ITEMS -->
-    <div class="cart-items" id="cartItems">
-      <!-- CART ITEMS WILL LOAD HERE VIA JS -->
+    <div class="cart-items">
+
+      <!-- SINGLE CART ITEM (REPEAT USING JS DATA) -->
+      <div class="cart-item" id="cartItemTemplate" style="display:none">
+
+        <img class="cart-image" src="" alt="Product">
+
+        <div class="cart-details">
+          <h4 class="cart-name">Product Name</h4>
+          <p class="cart-meta">Purity | Size</p>
+          <p class="cart-price">₹0</p>
+        </div>
+
+        <div class="qty">
+          <button class="qty-minus">-</button>
+          <span class="qty-value">1</span>
+          <button class="qty-plus">+</button>
+        </div>
+
+        <span class="remove" title="Remove item">
+          <i class="fa-solid fa-trash"></i>
+        </span>
+
+      </div>
+
+      <!-- ITEMS WILL CLONE ABOVE -->
+      <div id="cartList"></div>
+
     </div>
 
-    <!-- SUMMARY -->
     <div class="summary">
       <h3>Order Summary</h3>
 
       <p>
         <span>Subtotal</span>
-        <span id="subtotal">₹ --</span>
-      </p>
-
-      <p>
-        <span>GST (3%)</span>
-        <span id="gst">₹ --</span>
+        <span id="cartSubtotal">₹0</span>
       </p>
 
       <p>
         <span>Shipping</span>
-        <span>₹ Free</span>
+        <span id="cartShipping">₹0</span>
       </p>
+
+      <hr>
 
       <p class="total">
         <span>Total</span>
-        <span id="total">₹ --</span>
+        <span id="cartTotal">₹0</span>
       </p>
 
-      <button onclick="window.location.href='checkout.html'">
-        Proceed to Checkout
-      </button>
-
-      <button class="whatsapp" id="whatsappOrder">
-        WhatsApp Order
-      </button>
+      <button class="checkout" id="checkoutBtn">Check Out</button>
+      <button class="whatsapp" id="whatsappBtn">WhatsApp Order</button>
     </div>
 
-  </div>
 
-  <!-- ================= CART JS ================= -->
+  </section>
+
   <script src="/js/cart.js"></script>
-
 </body>
 
 </html>

@@ -1,130 +1,139 @@
 // ================= CART PAGE SCRIPT =================
 
-// TEMP METAL RATES (ADMIN LATER)
-const rate = getMetalRate(item.metal);
-const price = rate * item.net_weight + item.making_charge;
+// ---------- ELEMENTS ----------
+const cartList = document.getElementById("cartList");
+const subtotalEl = document.getElementById("cartSubtotal");
+const shippingEl = document.getElementById("cartShipping");
+const totalEl = document.getElementById("cartTotal");
 
-
-// ================= PRICE CALCULATION =================
-function calculateItemPrice(product) {
-    let rate = 0;
-
-    if (product.metal === "gold") rate = GOLD_RATE;
-    if (product.metal === "silver") rate = SILVER_RATE;
-    if (product.metal === "diamond") rate = DIAMOND_RATE;
-
-    const weight = product.net_weight ?? product.gross_weight ?? 0;
-    const making = product.making_charge || 0;
-
-    const metalPrice = weight * rate;
-    const subtotal = metalPrice + making;
-    const gst = subtotal * 0.03;
-
-    return subtotal + gst;
+// ---------- CART STORAGE ----------
+function getCart() {
+  return JSON.parse(localStorage.getItem("cart")) || [];
 }
 
-// ================= RENDER CART =================
+function saveCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// ---------- RENDER CART ----------
 function renderCart() {
-    cartItemsEl.innerHTML = "";
+  const cart = getCart();
+  cartList.innerHTML = "";
 
-    if (!cart.length) {
-        cartItemsEl.textContent = "Your cart is empty.";
-        subtotalEl.textContent = "₹ 0";
-        gstEl.textContent = "₹ 0";
-        totalEl.textContent = "₹ 0";
-        return;
-    }
+  if (cart.length === 0) {
+    cartList.innerHTML = "<p>Your cart is empty</p>";
+    updateSummary([]);
+    return;
+  }
 
-    let subtotal = 0;
-    let gst = 0;
+  cart.forEach((item, index) => {
+    const row = document.createElement("div");
+    row.className = "cart-item";
 
-    cart.forEach((item, index) => {
-        const cartItem = document.createElement("div");
-        cartItem.className = "cart-item";
+    row.innerHTML = `
+      <img src="${item.image}" alt="${item.name}">
 
-        // IMAGE
-        const img = document.createElement("img");
-        img.src = item.image;
-        img.alt = item.name;
+      <div>
+        <h4>${item.name}</h4>
+        <p class="cart-meta">
+          <span>Metal Purity: ${item.purity}</span>
+          ${item.size ? `| <span>Size: ${item.size}</span>` : ""}
+        </p>
+        <p class="cart-price">₹${item.price.toLocaleString("en-IN")}</p>
+      </div>
 
-        // DETAILS
-        const details = document.createElement("div");
+      <div class="qty">
+        <button class="qty-minus">-</button>
+        <span>${item.qty}</span>
+        <button class="qty-plus">+</button>
+      </div>
 
-        const name = document.createElement("h4");
-        name.textContent = item.name;
+      <span class="remove" title="Remove item">
+        <i class="fa-solid fa-trash"></i>
+      </span>
+    `;
 
-        const weight = document.createElement("p");
-        weight.textContent = `Weight: ${item.net_weight ?? item.gross_weight} g`;
+    // Quantity minus
+    row.querySelector(".qty-minus").onclick = () => updateQty(index, -1);
 
-        const price = calculateItemPrice(item);
-        subtotal += (price / 1.03) * item.qty;
-        gst += ((price / 1.03) * 0.03) * item.qty;
+    // Quantity plus
+    row.querySelector(".qty-plus").onclick = () => updateQty(index, 1);
 
-        const priceText = document.createElement("p");
-        priceText.textContent = `Price: ₹ ${price.toFixed(0)}`;
+    // Remove item
+    row.querySelector(".remove").onclick = () => removeItem(index);
 
-        details.append(name, weight, priceText);
+    cartList.appendChild(row);
+  });
 
-        // QUANTITY
-        const qty = document.createElement("div");
-        qty.className = "qty";
-
-        const minus = document.createElement("button");
-        minus.textContent = "-";
-        minus.onclick = () => updateQty(index, -1);
-
-        const count = document.createElement("span");
-        count.textContent = item.qty;
-
-        const plus = document.createElement("button");
-        plus.textContent = "+";
-        plus.onclick = () => updateQty(index, 1);
-
-        qty.append(minus, count, plus);
-
-        // REMOVE
-        const remove = document.createElement("div");
-        remove.className = "remove";
-        remove.innerHTML = `<i class="fa fa-trash"></i>`;
-        remove.onclick = () => removeItem(index);
-
-        cartItem.append(img, details, qty, remove);
-        cartItemsEl.appendChild(cartItem);
-    });
-
-    subtotalEl.textContent = `₹ ${subtotal.toFixed(0)}`;
-    gstEl.textContent = `₹ ${gst.toFixed(0)}`;
-    totalEl.textContent = `₹ ${(subtotal + gst).toFixed(0)}`;
+  updateSummary(cart);
 }
 
-// ================= ACTIONS =================
+// ---------- UPDATE SUMMARY ----------
+function updateSummary(cart) {
+  let subtotal = 0;
+
+  cart.forEach(item => {
+    subtotal += item.price * item.qty;
+  });
+
+  // Shipping logic (simple)
+  const shipping = subtotal > 0 ? 0 : 0; // FREE for now
+  const total = subtotal + shipping;
+
+  subtotalEl.innerText = "₹" + subtotal.toLocaleString("en-IN");
+  shippingEl.innerText = shipping === 0 ? "FREE" : "₹" + shipping.toLocaleString("en-IN");
+  totalEl.innerText = "₹" + total.toLocaleString("en-IN");
+}
+
+// ---------- UPDATE QUANTITY ----------
 function updateQty(index, change) {
-    cart[index].qty += change;
-    if (cart[index].qty <= 0) cart.splice(index, 1);
-    saveCart();
-}
+  const cart = getCart();
+  cart[index].qty += change;
 
-function removeItem(index) {
+  if (cart[index].qty <= 0) {
     cart.splice(index, 1);
-    saveCart();
+  }
+
+  saveCart(cart);
+  renderCart();
 }
 
-function saveCart() {
-    localStorage.setItem("cart", JSON.stringify(cart));
-    renderCart();
+// ---------- REMOVE ITEM ----------
+function removeItem(index) {
+  const cart = getCart();
+  cart.splice(index, 1);
+  saveCart(cart);
+  renderCart();
 }
 
-// ================= WHATSAPP ORDER =================
-whatsappBtn.onclick = () => {
-    let message = "Hello Ghanshyam Dumbhare Jewellers,%0A%0AOrder Details:%0A";
-
-    cart.forEach(item => {
-        message += `${item.name} (%0AWeight: ${item.net_weight}g, Qty: ${item.qty})%0A%0A`;
-    });
-
-    message += `Total: ${totalEl.textContent}`;
-
-    window.open(`https://wa.me/91XXXXXXXXXX?text=${message}`, "_blank");
+// ---------- CHECKOUT ----------
+document.getElementById("checkoutBtn").onclick = () => {
+  window.location.href = "checkout.html";
 };
 
+// ---------- WHATSAPP ORDER ----------
+document.getElementById("whatsappBtn").onclick = () => {
+  const cart = getCart();
+  if (!cart.length) return;
+
+  let message = "🛒 Jewellery Order\n\n";
+
+  cart.forEach(item => {
+    message += `${item.name}\n`;
+    message += `Purity: ${item.purity}\n`;
+    if (item.size) message +=  `Size: ${item.size}\n`;
+    message += `Qty: ${item.qty}\n`;
+    message += `Price: ₹${item.price}\n\n`;
+  });
+
+  const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+  message += `Total: ₹${total}`;
+
+  window.open(
+    `https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(message)}`,
+    "_blank"
+  );
+};
+
+// ---------- INIT ----------
 renderCart();

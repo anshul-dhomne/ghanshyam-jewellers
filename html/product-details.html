@@ -193,32 +193,39 @@
                     </div>
                 </div>
 
-                <!-- PURITY and PINCODE -->
-                <div class="option-row">
-                    <div class="option-left">
-                        <span class="label">Metal Purity</span>
-                        <select id="puritySelect" class="select-box"></select>
-                    </div>
-                    <div class="option-right">
-                        <span class="label">Your Pincode</span>
+                <!-- PURITY, PINCODE & SIZE -->
+                    <div class="option-row option-row-3">
 
-                        <div class="pincode-wrapper">
-                            <input type="text" placeholder="Pincode" maxlength="6">
-                            <button>CHECK</button>
+                        <!-- PURITY -->
+                        <div class="option-left">
+                            <span class="label">Metal Purity</span>
+
+                            <div class="select-box">
+                                <span class="label"></span>
+                                <span id="purityValue" class="static-box"></span>
+                            </div>
                         </div>
-                        <p id="pincodeMessage" style="margin-top:6px;font-size:14px;"></p>
+
+                        <!-- PINCODE (UNCHANGED) -->
+                        <div class="option-middle">
+                            <span class="label">Your Pincode</span>
+
+                            <div class="pincode-wrapper">
+                                <input type="text" placeholder="Pincode" maxlength="6">
+                                <button>CHECK</button>
+                            </div>
+
+                            <p id="pincodeMessage" style="margin-top:6px;font-size:14px;"></p>
+                        </div>
+
+                        <!-- SIZE -->
+                        <div class="option-right" id="sizeRow">
+                            <span class="label">Size</span>
+                            <select id="sizeSelect" class="select-box"></select>
+                        </div>
 
                     </div>
 
-                </div>
-
-                <!-- SIZE -->
-                <div class="option-row" id="sizeRow">
-                    <div class="option-left">
-                        <span class="label">Size</span>
-                        <select id="sizeSelect" class="select-box"></select>
-                    </div>
-                </div>
 
             </div>
 

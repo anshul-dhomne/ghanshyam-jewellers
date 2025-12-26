@@ -136,7 +136,7 @@ body {
 .select-box {
     width: 100%;
     height: 46px;
-    padding: 0 12px;
+    padding: 10px 12px;
     border: 1px solid #7B1113;
     border-radius: 12px;
     font-size: 15px;
