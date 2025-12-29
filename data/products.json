@@ -32,7 +32,13 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_percent": 13,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 10103,
@@ -45,7 +51,13 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_percent": 10,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 10104,
@@ -58,7 +70,13 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_percent": 10,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 10105,
@@ -71,7 +89,13 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_percent": 10,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 10106,
@@ -84,7 +108,13 @@
         "net_weight": 10.20,
         "gross_weight": 4.45,
         "making_percent": 10,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 10107,
@@ -98,7 +128,13 @@
         "gross_weight": 4.45,
         "making_percent": 10,
         "size": [6,7,8],
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 10108,
@@ -111,7 +147,13 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_percent": 10,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 10109,
@@ -125,7 +167,13 @@
         "gross_weight": 4.45,
         "making_percent": 10,
         "size": [6,7,8],
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 101010,
@@ -138,7 +186,13 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_percent": 10,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       }
     ],
     "gents": [
@@ -154,7 +208,13 @@
         "gross_weight": 4.45,
         "making_percent": 10,
         "size": [6,7,8],
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 10202,
@@ -167,7 +227,13 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_percent": 10,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 10203,
@@ -181,7 +247,13 @@
         "gross_weight": 4.45,
         "making_percent": 10,
         "length": [6,7,8],
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 10204,
@@ -195,7 +267,13 @@
         "gross_weight": 4.45,
         "making_percent": 10,
         "size": [6,7,8],
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       }
     ]
   },
@@ -212,7 +290,13 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_charge": 300,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 20102,
@@ -225,7 +309,13 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_charge": 450,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 20103,
@@ -239,7 +329,13 @@
         "gross_weight": 4.45,
         "making_charge": 450,
         "size": [6,7,8],
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 20110,
@@ -252,7 +348,13 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_charge": 420,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 20105,
@@ -265,7 +367,13 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_charge": 450,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 20104,
@@ -279,7 +387,13 @@
         "gross_weight": 4.45,
         "making_charge": 450,
         "size": [6,7,8],
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       }
     ],
     "gents": [
@@ -294,7 +408,13 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_charge": 450,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 20107,
@@ -308,7 +428,13 @@
         "gross_weight": 4.45,
         "making_charge": 450,
         "size": [6,7,8],
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 20109,
@@ -321,7 +447,13 @@
         "net_weight": 4.20,
         "gross_weight": 4.45,
         "making_charge": 450,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 20108,
@@ -335,7 +467,13 @@
         "gross_weight": 4.45,
         "making_charge": 450,
         "size": [6,7,8],
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       }
     ]
   },
@@ -354,7 +492,13 @@
         "diamond_weight": 0.35,
         "making_charge": 3200,
         "size": [6,7,8],
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 30102,
@@ -368,7 +512,13 @@
         "gross_weight": 4.45,
         "diamond_weight": 0.42,
         "making_charge": 3000,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 30103,
@@ -382,7 +532,13 @@
         "gross_weight": 4.45,
         "diamond_weight": 0.28,
         "making_charge": 2800,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 30104,
@@ -396,7 +552,13 @@
         "gross_weight": 4.45,
         "diamond_weight": 0.55,
         "making_charge": 4500,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 30105,
@@ -410,7 +572,13 @@
         "gross_weight": 4.45,
         "diamond_weight": 0.60,
         "making_charge": 5200,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 30106,
@@ -424,7 +592,13 @@
         "gross_weight": 4.45,
         "diamond_weight": 0.12,
         "making_charge": 1800,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       }
     ],
     "gents": [
@@ -441,7 +615,13 @@
         "diamond_weight": 0.45,
         "making_charge": 4200,
         "size": [6,7,8],
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 30202,
@@ -455,7 +635,13 @@
         "gross_weight": 4.45,
         "diamond_weight": 0.22,
         "making_charge": 2600,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       },
       {
         "id": 30203,
@@ -469,7 +655,13 @@
         "gross_weight": 4.45,
         "diamond_weight": 0.70,
         "making_charge": 6500,
-        "image": "/images/Product.png"
+        "image": [
+           "/images/Product.png",
+            "/images/bestseller collection/gold_bangles.png",
+             "/images/bestseller collection/gold_earring.png",
+              "/images/bestseller collection/Gold_mangalsutra.png",
+              "/images/bestseller collection/Gold_ring.png"
+        ]
       }
     ]
   }
