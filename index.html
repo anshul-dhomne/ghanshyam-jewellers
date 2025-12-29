@@ -142,7 +142,11 @@
       <div class="nav-icons">
         <i class="fa fa-search"></i>
         <i class="fa fa-heart"></i>
-        <i class="fa fa-shopping-cart"></i>
+        <a href="/html/cart.html" class="cart-icon">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cartCount" class="cart-count">0</span>
+        </a>
+
         <i class="fa fa-user" onclick="window.location.href='login.html'"></i>
         <i class="fa fa-bars menu-toggle"></i>
       </div>
@@ -475,6 +479,8 @@
   <!-- ========== FOOTER END ========== -->
 
   <!-- JS -->
+  <script src="/js/cart-utils.js"></script>
+  <script src="/js/cart-count.js"></script>
   <script src="js/rate.js"></script>
   <script src="js/price.js"></script>
   <script src="js/index.js"></script>

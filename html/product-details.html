@@ -142,7 +142,10 @@
             <div class="nav-icons">
                 <i class="fa fa-search"></i>
                 <i class="fa fa-heart"></i>
-                <i class="fa fa-shopping-cart"></i>
+                <a href="/html/cart.html" class="cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cartCount" class="cart-count">0</span>
+                </a>
                 <i class="fa fa-user" onclick="window.location.href='login.html'"></i>
                 <i class="fa fa-bars menu-toggle"></i>
             </div>
@@ -194,37 +197,37 @@
                 </div>
 
                 <!-- PURITY, PINCODE & SIZE -->
-                    <div class="option-row option-row-3">
+                <div class="option-row option-row-3">
 
-                        <!-- PURITY -->
-                        <div class="option-left">
-                            <span class="label">Metal Purity</span>
+                    <!-- PURITY -->
+                    <div class="option-left">
+                        <span class="label">Metal Purity</span>
 
-                            <div class="select-box">
-                                <span class="label"></span>
-                                <span id="purityValue" class="static-box"></span>
-                            </div>
+                        <div class="select-box">
+                            <span class="label"></span>
+                            <span id="purityValue" class="static-box"></span>
                         </div>
-
-                        <!-- PINCODE (UNCHANGED) -->
-                        <div class="option-middle">
-                            <span class="label">Your Pincode</span>
-
-                            <div class="pincode-wrapper">
-                                <input type="text" placeholder="Pincode" maxlength="6">
-                                <button>CHECK</button>
-                            </div>
-
-                            <p id="pincodeMessage" style="margin-top:6px;font-size:14px;"></p>
-                        </div>
-
-                        <!-- SIZE -->
-                        <div class="option-right" id="sizeRow">
-                            <span class="label">Size</span>
-                            <select id="sizeSelect" class="select-box"></select>
-                        </div>
-
                     </div>
+
+                    <!-- PINCODE (UNCHANGED) -->
+                    <div class="option-middle">
+                        <span class="label">Your Pincode</span>
+
+                        <div class="pincode-wrapper">
+                            <input type="text" placeholder="Pincode" maxlength="6">
+                            <button>CHECK</button>
+                        </div>
+
+                        <p id="pincodeMessage" style="margin-top:6px;font-size:14px;"></p>
+                    </div>
+
+                    <!-- SIZE -->
+                    <div class="option-right" id="sizeRow">
+                        <span class="label">Size</span>
+                        <select id="sizeSelect" class="select-box"></select>
+                    </div>
+
+                </div>
 
 
             </div>
@@ -320,6 +323,8 @@
     <!-- ========== FOOTER END ========== -->
 
     <!-- JS -->
+    <script src="/js/cart-utils.js"></script>
+    <script src="/js/cart-count.js"></script>
     <script src="/js/rate.js"></script>
     <script src="/js/price.js"></script>
     <script src="/js/product-details.js"></script>

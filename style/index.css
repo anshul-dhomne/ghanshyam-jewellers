@@ -130,6 +130,30 @@
    display: none;
  }
 
+ /* CART */
+ .cart-icon {
+   position: relative;
+   display: inline-block;
+   color: #222;
+ }
+
+ .cart-count {
+   position: absolute;
+   top: -6px;
+   right: -10px;
+   background: #c0392b;
+   color: #fff;
+   font-size: 12px;
+   min-width: 18px;
+   height: 18px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: 600;
+ }
+
+
  /* ====== BANNER SLIDER ======= */
 
  .banner-slider {
