@@ -1,9 +1,9 @@
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
 const orderItems = document.getElementById("orderItems");
 const subtotalEl = document.getElementById("subtotal");
 const gstEl = document.getElementById("gst");
 const totalEl = document.getElementById("total");
-const shippingEl = document.getElementById("shipping");
 const payBtn = document.getElementById("placeOrder");
 
 const RATES = {
@@ -14,7 +14,7 @@ const RATES = {
 
 let subtotal = 0;
 
-// ================= RENDER CART =================
+/* RENDER CART */
 cart.forEach(p => {
   const qty = p.qty || 1;
   const rate = RATES[p.metal] || 0;
@@ -36,6 +36,7 @@ cart.forEach(p => {
   orderItems.appendChild(div);
 });
 
+/* TOTAL CALCULATION */
 const gst = subtotal * 0.03;
 const total = subtotal + gst;
 
@@ -43,33 +44,39 @@ subtotalEl.textContent = "₹ " + subtotal.toFixed(0);
 gstEl.textContent = "₹ " + gst.toFixed(0);
 totalEl.textContent = "₹ " + total.toFixed(0);
 
-// ================= PAYMENT =================
+/* BILLING ADDRESS TOGGLE */
+const billingRadios = document.querySelectorAll('input[name="billing"]');
+const billingForm = document.getElementById("billingForm");
+
+billingRadios.forEach(radio => {
+  radio.addEventListener("change", () => {
+    billingForm.style.display =
+      radio.value === "different" && radio.checked ? "block" : "none";
+  });
+});
+
+/* PAYMENT */
 payBtn.onclick = () => {
-
   if (!cart.length) return alert("Cart is empty");
+  if (!fname.value || !phone.value) return alert("Fill required details");
 
-  if (!fname.value || !phone.value)
-    return alert("Please fill required details");
+  const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
 
-  const paymentType = document.querySelector('input[name="pay"]:checked').value;
-
-  if (paymentType === "cod") {
+  if (paymentMethod === "cod") {
     alert("Order placed successfully (COD)");
     localStorage.removeItem("cart");
     window.location.href = "/html/order-success.html";
     return;
   }
 
-  const options = {
+  new Razorpay({
     key: "rzp_test_xxxxxxxx",
     amount: Math.round(total * 100),
     currency: "INR",
     name: "Ghanshyam Dumbhare Jewellers",
-    handler: function () {
+    handler: () => {
       localStorage.removeItem("cart");
       window.location.href = "/html/order-success.html";
     }
-  };
-
-  new Razorpay(options).open();
+  }).open();
 };

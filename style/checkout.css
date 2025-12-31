@@ -1,123 +1,168 @@
-:root {
-    --gold: #c9a24d;
-    --dark: #222;
-    --grey: #666;
-    --beige: #f5f1ea;
+body {
+  background: #f6f6f6;
+  font-family: "Poppins", sans-serif;
 }
 
-/* ================= GLOBAL ================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Poppins, sans-serif;
-}
-
-/* ================= LAYOUT ================= */
 .checkout-container {
-    max-width: 1200px;
-    margin: 30px auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 40px;
-    padding: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
 }
 
-/* ================= FORM ================= */
-.form-section {
-    background-color: #f5f1ea;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.form-section h3 {
-    font-family: Playfair Display;
-    margin: 25px 0 10px;
-}
-
-.form-section input,
-.form-section select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-
-/* Two column row */
-.two {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-
-/* ===== NEW THREE COLUMN ROW ===== */
-.three {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-/* Checkbox alignment */
-.check {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.check input {
-    width: 16px;
-    height: 16px;
-    margin: 0;
-}
-
-/* ================= SUMMARY ================= */
+.form-section,
 .summary {
-    background-color: #f5f1ea;
-    border: 1px solid #eee;
-    padding: 20px;
-    border-radius: 12px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
 }
 
+h3 {
+  margin: 25px 0 15px;
+  font-weight: 500;
+}
+
+/* FLOATING LABEL */
+.field {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 16px 12px 6px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.field label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: #777;
+  background: #fff;
+  padding: 0 6px;
+  transition: 0.25s;
+  pointer-events: none;
+}
+
+.field input:focus + label,
+.field input:valid + label,
+.field select:focus + label,
+.field select:valid + label {
+  top: 6px;
+  font-size: 11px;
+  color: #000;
+}
+
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.check {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  color: #555;
+}
+
+/* PHONE FIELD (UNCHANGED DESIGN) */
+.phone-field {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.phone-field .country-code {
+  width: 10%;
+  min-width: 70px;
+  border: none;
+  border-right: 1px solid #d9d9d9;
+  background: transparent;
+  padding: 16px 8px 6px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.phone-field input {
+  width: 90%;
+  border: none;
+}
+
+.phone-field label {
+  left: calc(10% + 12px);
+}
+
+.phone-field:focus-within {
+  border-color: #000;
+}
+
+/* RADIO */
+.radio {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.radio input {
+  accent-color: #000;
+}
+
+/* BILLING FORM */
+.billing-form {
+  display: none;
+  padding: 15px;
+  background: #fafafa;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+/* SUMMARY */
 .product {
-    display: grid;
-    grid-template-columns: 50px 1fr auto;
-    gap: 10px;
-    margin-bottom: 15px;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 .product img {
-    width: 50px;
-    border: 1px solid #ddd;
+  width: 60px;
+  border-radius: 8px;
+}
+
+.price-row,
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
 }
 
 .total {
-    font-weight: 600;
-    font-size: 16px;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .pay-now {
-    width: 100%;
-    padding: 12px;
-    background: #5a2d82;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 900px) {
-    .checkout-container {
-        grid-template-columns: 1fr;
-    }
-
-    .three {
-        grid-template-columns: 1fr;
-    }
+  width: 100%;
+  padding: 14px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }

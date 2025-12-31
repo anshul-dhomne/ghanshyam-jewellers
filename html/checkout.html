@@ -3,23 +3,17 @@
 
 <head>
   <meta charset="UTF-8" />
+  <title>Checkout</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CheckOut</title>
 
-  <!-- SEO -->
-  <meta name="description"
-    content="Ghanshyam Dumbhare Jewellers – Premium Gold, Diamond & Silver Jewellery Since 1978" />
-
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/style/index.css" />
+  <link rel="stylesheet" href="/style/index.css">
   <link rel="stylesheet" href="/style/checkout.css">
 </head>
 
@@ -30,10 +24,9 @@
     <div class="navbar">
       <div class="brand">
         <a href="/index.html">
-          <img src="/images/main logo/logo.PNG">
+          <img src="/images/main logo/logo.PNG" />
         </a>
       </div>
-
       <div class="nav-icons">
         <a href="/html/cart.html" class="cart-icon">
           <i class="fa-solid fa-cart-shopping"></i>
@@ -46,78 +39,205 @@
   <!-- ================= CHECKOUT ================= -->
   <div class="checkout-container">
 
-    <!-- ===== LEFT : FORM ===== -->
+    <!-- ================= LEFT FORM ================= -->
     <div class="form-section">
 
-      <!-- Contact -->
+      <!-- CONTACT -->
       <h3>Contact</h3>
-      <input type="text" id="contact" placeholder="Email">
+      <div class="field">
+        <input type="email" required>
+        <label>Email or mobile phone number</label>
+      </div>
 
       <label class="check">
         <input type="checkbox" checked>
-        <span>Keep me updated on new collections, exclusive offers, and order updates.</span>
+        Keep me updated on offers and order updates
       </label>
 
-      <!-- Delivery -->
+      <!-- DELIVERY -->
       <h3>Delivery</h3>
 
       <div class="two">
-        <input type="text" id="fname" placeholder="First name">
-        <input type="text" id="lname" placeholder="Last name">
+        <div class="field">
+          <input type="text" id="fname" required>
+          <label>First name</label>
+        </div>
+        <div class="field">
+          <input type="text" required>
+          <label>Last name</label>
+        </div>
       </div>
 
-      <input type="text" id="address" placeholder="Address">
-      <input type="text" placeholder="Apartment, suite, etc. (optional)">
+      <div class="field">
+        <input type="text" required>
+        <label>Address</label>
+      </div>
 
-      <select>
-        <option>India</option>
-      </select>
+      <div class="field">
+        <input type="text">
+        <label>Apartment, suite, etc. (optional)</label>
+      </div>
 
-      <!-- ===== NEW 3 COLUMN ROW ===== -->
       <div class="three">
-        <select name="state" id="state">
-          <option value="" disabled selected>State</option>
-          <option value="Maharashtra">Maharashtra</option>
-          <option value="Karnataka">Karnataka</option>
-          <option value="Tamil Nadu">Tamil Nadu</option>
-          <option value="Delhi">Delhi</option>
-          <option value="Gujarat">Gujarat</option>
-          <option value="Rajasthan">Rajasthan</option>
-          <option value="Uttar Pradesh">Uttar Pradesh</option>
-          <option value="West Bengal">West Bengal</option>
-          <option value="Andhra Pradesh">Andhra Pradesh</option>
-          <option value="Punjab">Punjab</option>
-        </select>
-        
-        <input type="text" id="city" placeholder="City">
-        <input type="text" id="pincode" placeholder="PIN code">
+        <div class="field">
+          <select required>
+            <option value="" disabled selected></option>
+            <option>Maharashtra</option>
+            <option>Gujarat</option>
+            <option>Delhi</option>
+          </select>
+          <label>State</label>
+        </div>
+
+        <div class="field">
+          <input type="text" required>
+          <label>City</label>
+        </div>
+
+        <div class="field">
+          <input type="text" required>
+          <label>PIN code</label>
+        </div>
       </div>
 
-      <input type="tel" id="phone" placeholder="Phone">
-    
+      <!-- PHONE (UNCHANGED DESIGN) -->
+      <div class="field phone-field">
+        <select class="country-code">
+          <option value="+91">🇮🇳 +91</option>
+          <option value="+1">🇺🇸 +1</option>
+          <option value="+44">🇬🇧 +44</option>
+        </select>
+        <input type="tel" id="phone" required>
+        <label>Phone</label>
+      </div>
+
+      <label class="check">
+        <input type="checkbox" checked>
+        Save this information for next time
+      </label>
+
+      <!-- PAYMENT -->
+      <h3>Payment</h3>
+      <div class="payment-methods">
+        <label class="radio">
+          <input type="radio" name="payment" value="online" checked>
+          UPI / Card / Net Banking
+        </label>
+        <label class="radio">
+          <input type="radio" name="payment" value="cod">
+          Cash on Delivery
+        </label>
+      </div>
+
+      <!-- BILLING ADDRESS -->
+      <h3>Billing Address</h3>
+      <div class="billing-choice">
+        <label class="radio">
+          <input type="radio" name="billing" value="same" checked>
+          Same as delivery address
+        </label>
+        <label class="radio">
+          <input type="radio" name="billing" value="different">
+          Use a different billing address
+        </label>
+      </div>
+
+      <!-- DIFFERENT BILLING ADDRESS (SAME AS DELIVERY FORM) -->
+      <div class="two">
+        <div class="field">
+          <input type="text" id="fname" required>
+          <label>First name</label>
+        </div>
+        <div class="field">
+          <input type="text" required>
+          <label>Last name</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <input type="text" required>
+        <label>Address</label>
+      </div>
+
+      <div class="field">
+        <input type="text">
+        <label>Apartment, suite, etc. (optional)</label>
+      </div>
+
+      <div class="three">
+        <div class="field">
+          <select required>
+            <option value="" disabled selected></option>
+            <option>Maharashtra</option>
+            <option>Gujarat</option>
+            <option>Delhi</option>
+          </select>
+          <label>State</label>
+        </div>
+
+        <div class="field">
+          <input type="text" required>
+          <label>City</label>
+        </div>
+
+        <div class="field">
+          <input type="text" required>
+          <label>PIN code</label>
+        </div>
+      </div>
+
+      <!-- PHONE (UNCHANGED DESIGN) -->
+      <div class="field phone-field">
+        <select class="country-code">
+          <option value="+91">🇮🇳 +91</option>
+          <option value="+1">🇺🇸 +1</option>
+          <option value="+44">🇬🇧 +44</option>
+        </select>
+        <input type="tel" id="phone" required>
+        <label>Phone</label>
+      </div>
+
+      
+
     </div>
 
-    <!-- ===== RIGHT : SUMMARY ===== -->
+    <!-- ================= RIGHT SUMMARY ================= -->
     <div class="summary">
 
       <div id="orderItems"></div>
 
-      <p><span>Subtotal</span><span id="subtotal">₹ 0</span></p>
-      <p><span>GST (3%)</span><span id="gst">₹ 0</span></p>
-      <p><span>Shipping</span><span id="shipping">Enter address</span></p>
+      <div class="price-row">
+        <span>Subtotal</span>
+        <span id="subtotal">₹0</span>
+      </div>
 
-      <p class="total"><span>Total</span><span id="total">₹ 0</span></p>
+      <div class="price-row">
+        <span>GST (3%)</span>
+        <span id="gst">₹0</span>
+      </div>
+
+      <div class="price-row">
+        <span>Shipping</span>
+        <span>FREE</span>
+      </div>
+
+      <hr>
+
+      <div class="total">
+        <span>Total</span>
+        <span id="total">₹0</span>
+      </div>
+
       <small>Including GST</small>
 
       <button class="pay-now" id="placeOrder">Pay now</button>
+
     </div>
 
   </div>
 
-  <!-- Scripts -->
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="/js/checkout.js"></script>
-
 </body>
 
 </html>

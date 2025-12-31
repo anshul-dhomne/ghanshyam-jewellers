@@ -88,7 +88,7 @@ body {
 .form-box textarea {
     width: 100%;
     height: 30px;
-    padding: 6px 12px;
+    padding: 5px 12px;
     border-radius: 10px;
     border: 1.4px solid #cfcfcf;
     font-size: 13.5px;
@@ -110,6 +110,44 @@ body {
 .form-box ::placeholder {
     font-size: 13px;
     color: #8c8c8c;
+}
+
+/* PHONE FIELD WRAPPER */
+.form-row {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* COUNTRY CODE — 10% */
+.form-row .country-code {
+    width: 10%;
+    min-width: 70px;
+    /* prevents too small */
+    border: none;
+    border-right: 1px solid #d9d9d9;
+    background: transparent;
+    padding: 5px ;
+    font-size: 13px;
+    outline: none;
+    text-align: center;
+}
+
+/* PHONE INPUT — 90% */
+.form-row input {
+    width: 90%;
+    border: none;
+    padding: 16px 12px 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+/* LABEL POSITION FIX */
+.form-row label {
+    left: calc(10% + 12px);
+    /* label starts after country code */
 }
 
 /* CONSENT TEXT (PNG STYLE) */
@@ -180,10 +218,12 @@ body {
     margin: 60px auto;
     padding: 0 20px;
 }
+
 .faq-section h2 {
     text-align: center;
     margin-bottom: 30px;
 }
+
 .faq-item {
     margin-bottom: 15px;
     border-radius: 8px;
